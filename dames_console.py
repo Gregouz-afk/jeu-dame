@@ -9,3 +9,8 @@ def creer_plateau():
             if (i + j) % 2 == 1:
                 plateau[i][j] = "o"
     return plateau
+
+def afficher_plateau(plateau):
+    print("  " + " ".join(str(i) for i in range(8)))
+    for i in range(8):
+        print(i, " ".join(plateau[i]))
