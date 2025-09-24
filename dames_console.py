@@ -14,3 +14,12 @@ def afficher_plateau(plateau):
     print("  " + " ".join(str(i) for i in range(8)))
     for i in range(8):
         print(i, " ".join(plateau[i]))
+
+def deplacement_valide(plateau, x1, y1, x2, y2, joueur):
+    if not (0 <= x2 < 8 and 0 <= y2 < 8):
+        return False
+    piece = plateau[x1][y1]
+    if piece != joueur:
+        return False
+    if plateau[x2][y2] != " ":
+        return False
