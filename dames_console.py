@@ -39,3 +39,12 @@ def deplacement_valide(plateau, x1, y1, x2, y2, joueur):
         if plateau[milieu_x][milieu_y] == ennemi:
             return True
     return False
+
+def jouer_coup(plateau, x1, y1, x2, y2):
+    joueur = plateau[x1][y1]
+    plateau[x1][y1] = " "
+    plateau[x2][y2] = joueur
+    if abs(x2 - x1) == 2:  # Si c’était une prise
+        milieu_x = (x1 + x2) // 2
+        milieu_y = (y1 + y2) // 2
+        plateau[milieu_x][milieu_y] = " "
