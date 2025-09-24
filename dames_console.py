@@ -23,3 +23,11 @@ def deplacement_valide(plateau, x1, y1, x2, y2, joueur):
         return False
     if plateau[x2][y2] != " ":
         return False
+
+    dx = x2 - x1
+    dy = abs(y2 - y1)
+
+    if joueur == "x" and dx == 1 and dy == 1:
+        return True
+    if joueur == "o" and dx == -1 and dy == 1:
+        return True
