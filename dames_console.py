@@ -31,3 +31,11 @@ def deplacement_valide(plateau, x1, y1, x2, y2, joueur):
         return True
     if joueur == "o" and dx == -1 and dy == 1:
         return True
+
+    if abs(dx) == 2 and dy == 2:
+        milieu_x = (x1 + x2) // 2
+        milieu_y = (y1 + y2) // 2
+        ennemi = "o" if joueur == "x" else "x"
+        if plateau[milieu_x][milieu_y] == ennemi:
+            return True
+    return False
